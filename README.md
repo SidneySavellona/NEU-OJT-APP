@@ -5,13 +5,13 @@
 ## `src/`
 This directory contains all source code
 
-- ### `components\`
+- ### `components/`
     - Contains all reusable UI components i.e. headings, forms, buttons.
 
-- ### `pages\`
+- ### `pages/`
     - Contains external services such as API's and Databases.
 
-- ### `styles\`
+- ### `styles/`
     - Contains all css styling.
 
 - ### `App.tsx`
@@ -20,7 +20,7 @@ This directory contains all source code
 - ### `Index.tsx`
     - Where the entire app is rendered.
 
-- ## `public\`
+- ## `public/`
     - Contains static files such as contents like text, images, videos.
 
 - ## `tsconfig.json`
