@@ -17,7 +17,7 @@ This directory contains all source code
 - ### `App.tsx`
     - The main component that is rendered upon accessing the app
 
-- ### `Index.tsx`
+- ### `index.tsx`
     - Where the entire app is rendered.
 
 - ## `public/`
