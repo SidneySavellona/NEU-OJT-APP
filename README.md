@@ -20,6 +20,7 @@ This directory contains all source code
 - ### `index.tsx`
     - Where the entire app is rendered.
 
+ 
 - ## `public/`
     - Contains static files such as contents like text, images, videos.
 
