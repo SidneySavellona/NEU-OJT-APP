@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
+import Dashboard from './pages/dashboard';
 import './styles/App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>Hello World</div>
-  );
-}
+    <div className = 'app'>
+         <Dashboard></Dashboard>
+    </div>
+)
+};
 
 export default App;
