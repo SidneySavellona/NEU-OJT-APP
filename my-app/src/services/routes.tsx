@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/dashboard";
 import Login from "../pages/Login";
 import NoPage from "../pages/noPage";
 
