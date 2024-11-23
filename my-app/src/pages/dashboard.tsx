@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from "../components/Header";
 import MainOptions from "../components/MainOptions";
-import "../styles/App.css"
-
+import "../styles/Dashboard.css";
 
 
 const Dashboard: React.FC = () => {
   return ( 
-    <div className = "app-container">
-      <Header />
-      <MainOptions />
+    <div className="body">
+      <div className = "app-container">
+        <Header />
+        <MainOptions />
+      </div>
     </div>
   );
 }

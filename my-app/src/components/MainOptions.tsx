@@ -1,6 +1,5 @@
-
 import React from "react";
-import "../styles/App.css";
+import styles from "../styles/Dashboard.module.css";
 
 const MainOptions: React.FC = () => {
 

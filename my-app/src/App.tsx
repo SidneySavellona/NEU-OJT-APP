@@ -1,14 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import Dashboard from './pages/dashboard';
-import './styles/App.css';
+import routes from './services/routes'
+import { RouterProvider } from 'react-router-dom';
 
 const App: React.FC = () => {
-  return (
-    <div className = 'app'>
-         <Dashboard></Dashboard>
-    </div>
-)
+  return <RouterProvider router={routes} />;
 };
 
 export default App;

@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./Home";
 import Name from "./Name";
 import Logout from "./Logout";
-import "../styles/App.css"
+import styles from "../styles/Dashboard.module.css";
 
 const Header: React.FC = () => {
     return (
