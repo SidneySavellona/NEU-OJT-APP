@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Dashboard.module.css";
+import "../styles/Dashboard.css";
 
 const Logout: React.FC = () => {
     return (
