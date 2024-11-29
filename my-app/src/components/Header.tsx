@@ -1,15 +1,31 @@
 import React from "react";
 import Home from "./Home";
-import Name from "./Name";
-import Logout from "./Logout";
 import "../styles/Dashboard.css"
+import { Navigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../services/firebase";
 
 const Header: React.FC = () => {
+    const handleSignOut = async () => {
+        try {
+            <Navigate to='/' />
+            await signOut(auth);
+        } catch(error: any) {
+            console.log(error.message);
+        }
+    }
+    
     return (
            <div className = 'header'>
-                <Home />
-                <Name />
-                <Logout />
+                <button className="home-button">
+                    <img src="neu_logo.png" alt="Home" />
+                </button>
+
+                <h1 className = 'name'>NEU OJT APP</h1>
+                
+                <button onClick={handleSignOut} className="logout-button">
+                    Logout
+                </button>
            </div>
     )
 }
