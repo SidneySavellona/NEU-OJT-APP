@@ -1,7 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { Auth } from "firebase/auth";
+import { auth } from '../services/firebase';
 import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
-import { auth } from "./firebase";
 
 export const institutionalGoogleEmailLogin = async () => {
     const provider = new GoogleAuthProvider();
