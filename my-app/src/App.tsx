@@ -8,6 +8,7 @@ import NoPage from "./pages/noPage";
 import Login from "./pages/Login";
 import UpdateComp from "./components/updateComp";
 import Forms from "./components/Forms";
+import UploadRequirement from "./pages/uploadrequirement";
 
 
 const App: React.FC = () => {
@@ -65,6 +66,12 @@ const App: React.FC = () => {
     {
       path: "/Student-Info", 
       element: (<ProtectedRoute user={user}><Forms /></ProtectedRoute>),
+    },
+
+    
+    {
+      path: "/upload-requirements", 
+      element: (<ProtectedRoute user={user}><UploadRequirement /></ProtectedRoute>),
     },
   ]);
 

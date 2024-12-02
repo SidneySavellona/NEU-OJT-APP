@@ -12,6 +12,9 @@ const MainOptions: React.FC = () => {
   const handleStudentInfoClick = () => {
     navigate("/Student-Info"); // Navigate to Update Company route
   };
+  const handleUploadRequirementClick = () => {
+    navigate("/upload-requirements"); // Navigate to Update Company route
+  }
 
   return (
     <section className="options">
@@ -19,7 +22,7 @@ const MainOptions: React.FC = () => {
         <img src="neu_logo.png" alt="Enter Student Input" />
         Enter Student Input
       </button>
-      <button className="option-button">
+      <button className="option-button" onClick={handleUploadRequirementClick}>
         <img src="neu_logo.png" alt="Upload Requirements" />
         Upload Requirements
       </button>
@@ -27,7 +30,6 @@ const MainOptions: React.FC = () => {
         <img src="neu_logo.png" alt="Generate Endorsement Letter" />
         Generate Endorsement Letter
       </button>
-      {/* Update Company button with onClick handler */}
       <button className="option-button" onClick={handleUpdateCompanyClick}>
         <img src="neu_logo.png" alt="Update Company" />
         Update Company
