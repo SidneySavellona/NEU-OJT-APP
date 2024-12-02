@@ -1,14 +1,16 @@
 import React from "react";
 import Home from "./Home";
 import "../styles/Dashboard.css"
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../services/firebase";
 
 const Header: React.FC = () => {
+    const navigate = useNavigate();
+
     const handleSignOut = async () => {
         try {
-            <Navigate to='/' />
+            <Navigate to='/login' />
             await signOut(auth);
         } catch(error: any) {
             console.log(error.message);
@@ -17,7 +19,7 @@ const Header: React.FC = () => {
     
     return (
            <div className = 'header'>
-                <button className="home-button">
+                <button className="home-button" onClick={() => {navigate('/dashboard')}}>
                     <img src="neu_logo.png" alt="Home" />
                 </button>
 

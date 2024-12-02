@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "./services/firebase";
 import { ProtectedRoute } from "./services/protectedRoutes";
@@ -11,21 +11,21 @@ import Forms from "./components/Forms";
 
 
 const App: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null); // State for user
-  const [loading, setLoading] = useState<boolean>(true); // State to track loading status
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  // Firebase authentication status listener
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user); // Set user after authentication state change
-      setLoading(false); // Set loading to false once user is authenticated
+      setUser(user); 
+      setLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
 
   if (loading) {
-    return <h2>Loading...</h2>; // Show loading state while waiting for user data
+    return <h2>Loading...</h2>;
   }
 
   const Routes = createBrowserRouter([
@@ -37,13 +37,13 @@ const App: React.FC = () => {
       path: "/",
       element: (
         <ProtectedRoute user={user}>
-          <Login />
+          <Dashboard />
         </ProtectedRoute>
       ),
     },
     {
       path: "/login",
-      element: <Login />,
+      element: user ? <Navigate to="/" /> : <Login />,
     },
     {
       path: "/dashboard",

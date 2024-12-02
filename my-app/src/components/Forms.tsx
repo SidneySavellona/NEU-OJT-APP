@@ -1,7 +1,10 @@
 import React from "react";
 import "../styles/studentInfo.css"
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 const Forms: React.FC = () => {
+  const navigate = useNavigate();
+
     return (
         <main className="form-container">
         <form>
@@ -39,7 +42,7 @@ const Forms: React.FC = () => {
           </div>
 
           <div className="button-group">
-            <button type="button" className="btn back-btn">Back</button>
+            <button onClick={() => {navigate(-1)}} type="button" className="btn back-btn">Back</button>
             <button type="submit" className="btn save-btn">Save</button>
           </div>                
                 </div>    

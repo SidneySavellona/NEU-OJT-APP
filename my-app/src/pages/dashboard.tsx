@@ -6,12 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
   return ( 
-    <div className="body">
       <div className = "app-container">
         <Header />
         <MainOptions />
       </div>
-    </div>
   );
 }
 

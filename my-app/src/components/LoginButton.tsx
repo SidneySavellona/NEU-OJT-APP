@@ -25,9 +25,6 @@ const LoginButton: React.FC = () => {
                 if(userDoc.exists()){
                     setUser(resultUser);
                     setError(null);
-
-                    navigate('/dashboard');
-
                 } else {
                     setUser(null);
                     setError("You need to log-in using Institutional Email.");
@@ -40,6 +37,13 @@ const LoginButton: React.FC = () => {
             setUser(null);
         };
     };
+
+    useEffect(() => {
+      if(user){
+        navigate('/dashboard');
+      }
+    })
+
 
     return(
         <div>
