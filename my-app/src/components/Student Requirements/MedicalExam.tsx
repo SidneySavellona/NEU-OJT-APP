@@ -1,5 +1,5 @@
 import FileButton from "./FileButton";
-import "../styles/Uploadrequirement.css";
+import "../../styles/Uploadrequirement.css";
 
 interface MedicalExamProps {
   onFileChange: (file: File | null) => void;

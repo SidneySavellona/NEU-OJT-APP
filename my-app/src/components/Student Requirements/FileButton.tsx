@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Uploadrequirement.css";
+import "../../styles/Uploadrequirement.css";
 
 interface FileButtonProps {
   onFileChange: (file: File | null) => void;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Header from "../components/Header";
-import ParentConsentField from "../components/ParentConsentLetter";
-import Resume from "../components/Resume";
-import MedicalExam from '../components/MedicalExam';
-import PsychologyExam from '../components/PsychologyExam';
+import ParentConsentField from "../components/Student Requirements/ParentConsentLetter";
+import Resume from "../components/Student Requirements/Resume";
+import MedicalExam from '../components/Student Requirements/MedicalExam';
+import PsychologyExam from '../components/Student Requirements/PsychologyExam';
 import "../styles/Uploadrequirement.css";
 
 const UploadRequirement: React.FC = () => {
