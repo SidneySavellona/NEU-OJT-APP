@@ -1,0 +1,102 @@
+.container-wrapper {
+    background-color: #f2f2f2; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #000; /* Black border to match the red outline */
+    padding: 20px; /* Padding inside the container */
+    width: 80%; /* Adjust the width */
+    margin: 20px auto; /* Center the container horizontally */
+    box-sizing: border-box;
+}
+
+.body {
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.Upload-Requirements{
+    font-size: 30px;
+    font-family: "Times New Roman", serif; 
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    flex-grow: 1;
+  }
+
+.pdf-info{
+    font-size: 18px;
+    font-family: "Times New Roman", serif; 
+    color: #000000;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    
+}
+.ParentsConsent, .Resume, .MedicalExam, .PsychologyExam {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: #ffffff;
+    justify-content: center;
+    height: 80px; /* Reduced height */
+    border: 2px solid #000; /* Black border */
+    border-radius: 10px; /* Smaller rounded edges */
+    padding: 10px; /* Reduced padding */
+    margin: 0 auto 15px auto; /* Adjusted margin */
+    width: 80%; /* Set a percentage width to make the box smaller */
+    max-width: 1000px; /* Optional max width to control sizing on large screens */
+}
+
+.ParentConsentTitle, .ResumeTitle, .MedicalExamTitle, .PsychologyExamTitle {
+    font-size: 16px; /* Slightly smaller font size */
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+.upload-button {
+    background-color: #4c85ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 18px;
+    margin-left: auto; /* Aligns the button to the right */
+}
+
+.upload-button:hover {
+    background-color: #0026ff;
+}
+
+
+
+.Validated-text {
+    margin-left: 1rem; /* Space between input and text */
+    color: #16a34a; /* Green color */
+    font-size: 0.875rem; /* Text size */
+    display: flex;
+    align-items: center; /* Vertically center the text */
+}
