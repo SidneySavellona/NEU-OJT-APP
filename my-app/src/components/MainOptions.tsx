@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; 
-import styles from "../styles/Dashboard.module.css"; 
+import "../styles/Dashboard.css"
 
 const MainOptions: React.FC = () => {
   const navigate = useNavigate(); // Initialize useNavigate

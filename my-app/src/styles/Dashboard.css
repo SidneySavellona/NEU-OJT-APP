@@ -93,6 +93,8 @@ body {
     font-size: 16px;
     padding: 10px;
     position: relative;
+    cursor: pointer;
+
   }
   
   .option-button img {
