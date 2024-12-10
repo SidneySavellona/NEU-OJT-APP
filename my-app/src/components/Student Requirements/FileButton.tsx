@@ -13,11 +13,10 @@ const FileButton: React.FC<FileButtonProps> = ({ onFileChange }) => {
     if (e.target.files) {
       const file = e.target.files[0];
       
-      // Check if the selected file is a PDF
       if (file.type !== "application/pdf") {
         setSelectedFile(null);
         setIsValidated(false);
-        onFileChange(null); // Pass null when the file is not valid
+        onFileChange(null); 
       } else {
         setSelectedFile(file);
         setIsValidated(true);

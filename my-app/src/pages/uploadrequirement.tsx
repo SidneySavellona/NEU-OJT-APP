@@ -4,6 +4,8 @@ import ParentConsentField from "../components/Student Requirements/ParentConsent
 import Resume from "../components/Student Requirements/Resume";
 import MedicalExam from '../components/Student Requirements/MedicalExam';
 import PsychologyExam from '../components/Student Requirements/PsychologyExam';
+import { ref, uploadBytes } from 'firebase/storage';
+import { storage } from "../services/firebase";
 import "../styles/Uploadrequirement.css";
 
 const UploadRequirement: React.FC = () => {
@@ -14,9 +16,8 @@ const UploadRequirement: React.FC = () => {
     psychologyExam: null,
   });
 
-  const [isValidated, setIsValidated] = useState<boolean>(false);
+  const [isUploaded, setIsUploaded] = useState<boolean>(false);
 
-  // Callback to update the file in state
   const handleFileChange = (fieldName: string, file: File | null) => {
     setFiles((prevFiles) => ({
       ...prevFiles,
@@ -24,19 +25,25 @@ const UploadRequirement: React.FC = () => {
     }));
   };
 
-  const handleUploadAndValidation = () => {
-    // Check if all files are uploaded (not null)
+  const uploadFileToFirebase = async (file: File) => {
+    const fileName = file.name;
+    const fileRef = ref(storage, `studentRequirements/${fileName}`); 
+    await uploadBytes(fileRef, file); 
+  };
+  
+
+  const handleUploadAndValidation = async () => {
     const allFilesUploaded = Object.values(files).every(file => file !== null);
 
     if (allFilesUploaded) {
-      console.log("Uploading files:", files);
-      // Perform your upload logic here (e.g., send files to server)
+      if (files.parentConsent) await uploadFileToFirebase(files.parentConsent);
+      if (files.resume) await uploadFileToFirebase(files.resume);
+      if (files.medicalExam) await uploadFileToFirebase(files.medicalExam);
+      if (files.psychologyExam) await uploadFileToFirebase(files.psychologyExam);
 
-      // Trigger MOA validation
-      console.log("MOA Validation triggered!");
-      setIsValidated(true);  // Set validation status after the files are uploaded
+      setIsUploaded(true);  
     } else {
-      alert("Please upload all required files before proceeding.");
+      alert("Please upload all requirement files before proceeding.");
     }
   };
 
@@ -52,9 +59,8 @@ const UploadRequirement: React.FC = () => {
           <MedicalExam onFileChange={(file) => handleFileChange('medicalExam', file)} />
           <PsychologyExam onFileChange={(file) => handleFileChange('psychologyExam', file)} />
 
-          {/* Upload and MOA Validation button */}
           <button className="upload-button" onClick={handleUploadAndValidation}>
-            {isValidated ? "Files Uploaded and Validated" : "Upload "}
+            {isUploaded ? "Files Uploaded" : "Upload"}
           </button>
         </div>
       </div>
