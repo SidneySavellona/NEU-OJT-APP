@@ -16,7 +16,6 @@ const UploadRequirement: React.FC = () => {
 
   const [isValidated, setIsValidated] = useState<boolean>(false);
 
-  // Callback to update the file in state
   const handleFileChange = (fieldName: string, file: File | null) => {
     setFiles((prevFiles) => ({
       ...prevFiles,
@@ -25,16 +24,13 @@ const UploadRequirement: React.FC = () => {
   };
 
   const handleUploadAndValidation = () => {
-    // Check if all files are uploaded (not null)
     const allFilesUploaded = Object.values(files).every(file => file !== null);
 
     if (allFilesUploaded) {
       console.log("Uploading files:", files);
-      // Perform your upload logic here (e.g., send files to server)
 
-      // Trigger MOA validation
       console.log("MOA Validation triggered!");
-      setIsValidated(true);  // Set validation status after the files are uploaded
+      setIsValidated(true);  
     } else {
       alert("Please upload all required files before proceeding.");
     }
@@ -52,7 +48,6 @@ const UploadRequirement: React.FC = () => {
           <MedicalExam onFileChange={(file) => handleFileChange('medicalExam', file)} />
           <PsychologyExam onFileChange={(file) => handleFileChange('psychologyExam', file)} />
 
-          {/* Upload and MOA Validation button */}
           <button className="upload-button" onClick={handleUploadAndValidation}>
             {isValidated ? "Files Uploaded and Validated" : "Upload "}
           </button>

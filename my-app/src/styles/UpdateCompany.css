@@ -1,6 +1,3 @@
-/* UpdateCompany.css */
-
-/* General body styling */
 .body {
     background-color: #f8f9fa;
     padding: 20px;
@@ -66,9 +63,8 @@ button:hover {
     opacity: 0.9;
 }
 
-/* Edit Button */
 button.btn-primary {
-    background-color: #007bff;
+    background-color: #001aff;
     color: white;
 }
 
@@ -76,7 +72,6 @@ button.btn-primary:hover {
     background-color: #0056b3;
 }
 
-/* Delete Button */
 button.btn-danger {
     background-color: #dc3545;
     color: white;
@@ -86,24 +81,26 @@ button.btn-danger:hover {
     background-color: #c82333;
 }
 
-/* Save Button */
 button.btn-success {
-    background-color: #28a745;
+    background-color: #08571a;
     color: white;
 }
+button.save-btn{
+    background-color: #08571a;
+    color: white;
+}
+
 
 button.btn-success:hover {
     background-color: #218838;
 }
 
-/* Flex container for buttons */
 .d-flex {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
 }
 
-/* Responsive styling */
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -117,7 +114,6 @@ button.btn-success:hover {
         font-size: 0.9rem;
     }
 
-    /* Navbar adjustments for smaller screens */
     .navbar {
         flex-direction: column;
         align-items: flex-start;
