@@ -3,17 +3,16 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css"
 
 const MainOptions: React.FC = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
-  // Function to navigate to Update Company page
   const handleUpdateCompanyClick = () => {
-    navigate("/update-company"); // Navigate to Update Company route
+    navigate("/update-company"); 
   };
   const handleStudentInfoClick = () => {
-    navigate("/Student-Info"); // Navigate to Update Company route
+    navigate("/Student-Info"); 
   };
   const handleUploadRequirementClick = () => {
-    navigate("/upload-requirements"); // Navigate to Update Company route
+    navigate("/upload-requirements"); 
   }
 
   return (
